@@ -3,6 +3,7 @@
 #    > Author: liyong
 #    > Mail: 2550702985@qq
 #    > Created Time: Sat 06 May 2017 02:16:26 AM CST
+#    > Usage put this file on 
 # ************************************************************************/
 #!/bin/bash
 PATH=$PATH:/root/bin
@@ -18,8 +19,8 @@ alias vimeth0='vim /etc/sysconfig/network-scripts/ifcfg-eth0'
 alias vimeth1='vim /etc/sysconfig/network-scripts/ifcfg-eth1'
 alias vimeth2='vim /etc/sysconfig/network-scripts/ifcfg-eth2'
 os=6
-serviceList='httpd vsftpd'
-grep 7. /etc/redhat-release &> /dev/null && os=7
+serviceList='httpd vsftpd mysqld iptables smb'
+grep '7.' /etc/redhat-release &> /dev/null && os=7
 function serviceRestartAlias(){
     [ "$os" -eq 6 ] && alias r$1="service $1 restart" || alias r$1="systemctl restart $1"
 }
